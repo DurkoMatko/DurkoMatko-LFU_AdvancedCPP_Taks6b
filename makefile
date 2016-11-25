@@ -1,12 +1,12 @@
 CC=g++
-OBJECTS = main.o KilometersEstimator.o EfficientKilometersEstimator.o
+OBJECT_FILES = main.o KilometersEstimator.o EfficientKilometersEstimator.o
 CPPFLAGS = -std=c++11
 
 default : all
 all : KilometersEstimator_Test
 
-KilometersEstimator_Test: $(OBJECTS)
-	g++ -o $@ $(OBJECTS)
+KilometersEstimator_Test: $(OBJECT_FILES)
+	g++ -o $@ $(OBJECT_FILES)
 
 
 %.o: %.cpp
@@ -14,4 +14,4 @@ KilometersEstimator_Test: $(OBJECTS)
 
 
 clean:
-	rm KilometersEstimator_Test  $(OBJECTS)
+	rm KilometersEstimator_Test  $(OBJECT_FILES)
